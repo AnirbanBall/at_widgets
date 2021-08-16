@@ -359,7 +359,8 @@ class CustomDialog extends StatelessWidget {
                                                   stateSet(() {});
                                                   _atsignController.text =
                                                       (await (getFreeAtsign(
-                                                              context))) ?? '';
+                                                              context))) ??
+                                                          '';
                                                   loading = false;
                                                   stateSet(() {});
                                                 },

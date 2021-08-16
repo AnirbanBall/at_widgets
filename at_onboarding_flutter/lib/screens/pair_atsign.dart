@@ -220,8 +220,8 @@ class _PairAtsignWidgetState extends State<PairAtsignWidget> {
       loading = true;
     });
     try {
-      var isExist =
-          await (_onboardingService.isExistingAtsign(atsign) as FutureOr<bool?>);
+      var isExist = await (_onboardingService.isExistingAtsign(atsign)
+          as FutureOr<bool?>);
       if (isExist != null && isExist) {
         setState(() {
           loading = false;
@@ -244,7 +244,7 @@ class _PairAtsignWidgetState extends State<PairAtsignWidget> {
               MaterialPageRoute(
                   builder: (context) => _onboardingService.nextScreen!));
         }
-      }    
+      }
     } catch (e) {
       setState(() {
         loading = false;
@@ -257,7 +257,7 @@ class _PairAtsignWidgetState extends State<PairAtsignWidget> {
         _showAlertDialog(e, isPkam: true, title: 'Auth Failed');
       } else if (e == ResponseStatus.TIME_OUT) {
         _showAlertDialog(e, title: 'Response Time out');
-      } else{
+      } else {
         print(e);
       }
     }
