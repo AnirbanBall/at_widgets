@@ -64,7 +64,8 @@ class SDKService {
       fromDate = fromDate.split(' ')[0];
     }
     var response = await _atClientServiceInstance.atClient!.notifyList(
-        regex: ('${AppConstants.containsFollowing}|${AppConstants.containsFollowers}'),
+        regex:
+            ('${AppConstants.containsFollowing}|${AppConstants.containsFollowers}'),
         fromDate: fromDate);
     response = response.toString().replaceAll('data:', '');
     if (response == 'null') {
@@ -178,6 +179,7 @@ class SDKService {
     response = response.replaceAll('notification:', '').trim();
     return AtNotification.fromJson(jsonDecode(response));
   }
+
   ///Returns `true` if key is old key else `false`.
   bool _isOldKey(String? key) {
     return !key!.contains(AppConstants.libraryNamespace);
